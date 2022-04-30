@@ -1,15 +1,18 @@
 import io
-
 from rest_framework import serializers
 from rest_framework.parsers import JSONParser
 from rest_framework.renderers import JSONRenderer
-
 from .models import Women
 
+
 class WomenSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Women
-        fields = "__all__"
+	user = serializers.HiddenField(default=serializers.CurrentUserDefault())
+	class Meta:
+		model = Women
+		fields = '__all__'
+
+	
+
 
 # class WomenSerializer(serializers.Serializer):
 #     title = serializers.CharField(max_length=255)
