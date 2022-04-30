@@ -1,2 +1,2 @@
-# Django-REST-Framework_example_1
+# Django-REST-Framework
 channel: selfedu course: Lessons on Django REST Framework 
