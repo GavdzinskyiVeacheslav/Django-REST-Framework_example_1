@@ -6,6 +6,10 @@ from rest_framework.views import APIView
 from .models import Women
 from .serializers import WomenSerializer
 
+class WomenAPIList(generics.ListCreateAPIView):
+    queryset = Women.objects.all()
+    serializer_class = WomenSerializer
+
 
 class WomenAPIView(APIView):
     def get(self, request):
@@ -44,8 +48,6 @@ class WomenAPIView(APIView):
 
         return Response({'post': 'delete post ' + str(pk)})
 
-
-#Lesson_4_Methods_save()_create()_update()
 
 # class WomenAPIView(generics.ListAPIView):
 #     queryset = Women.objects.all()
